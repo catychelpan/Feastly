@@ -2,7 +2,7 @@
   "name": "nutrition-plan",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "Commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -18,6 +18,8 @@
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.6",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
