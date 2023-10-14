@@ -35,11 +35,11 @@ const LandingFeature = () => {
           />
           <LandingFeatureCard
             Icon={FeatureIcon}
-            description={'find recipes based on your preferences'}
+            description={'find recipes to use ingredients you already have'}
           />
           <LandingFeatureCard
             Icon={FeatureIcon}
-            description={'find recipes based on your preferences'}
+            description={'generate an entire meal plan for a week'}
           />
         </div>
       </div>
