@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../contexts/AuthContext.jsx'
 import { saveDietPlan } from '../firebase/utils.js'
 import useSortByDay from '../hooks/useSortByDay.js'
-import { ClockLoader } from 'react-spinners/ClockLoader.js';
+//import { ClockLoader } from 'react-spinners/ClockLoader.js';
 
 const apiKey = import.meta.env.VITE_API_KEY
 
@@ -52,7 +52,7 @@ const Questions = () => {
     }
   }
 
-  if(loading) return <ClockLoader loading = {loading} size = {60} color="green"/>
+  //if(loading) return <ClockLoader loading = {loading} size = {60} color="green"/>
 
   const renderStep = () => {
     switch (step) {
