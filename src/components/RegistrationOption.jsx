@@ -38,13 +38,7 @@ const RegistrationOption = () => {
     }
   }
 
-  if(loading) return <ClockLoader 
-
-  loading = {loading}
-  size = {60}
-  color="blue"
-
-/>
+  if(loading) return <ClockLoader loading = {loading} size = {60} color="blue"/>
 
   return (
     <div
