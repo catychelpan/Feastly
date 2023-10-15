@@ -1,4 +1,4 @@
-import CreativeKnowledge from '../assets/creative_knowledge.png'
+import CreativeKnowledge from '../assets/Creative_Knowledge.webp'
 import LandingFeatureCard from './LandingFeatureCard.jsx'
 import FeatureIcon from '../assets/feature_icon.svg?react'
 import PrimaryButton from './PrimaryButton.jsx'

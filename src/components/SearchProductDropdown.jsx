@@ -12,7 +12,7 @@ const SearchProductDropdown = ({ setChosenProducts }) => {
   const [textInput, setTextInput] = React.useState('')
   const debouncedTextInput = useDebounce(textInput, 500)
 
-  //TODO: replace with products received from API
+
 
   const handleChange = async (event) => {
     const query = event.target.value

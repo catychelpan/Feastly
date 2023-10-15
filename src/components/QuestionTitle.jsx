@@ -1,4 +1,4 @@
-import QuizImage from '../assets/quiz_image.png'
+import QuizImage from '../assets/Comment_Writing.webp'
 import React from 'react'
 
 const QuestionTitle = () => {
