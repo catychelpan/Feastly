@@ -42,7 +42,7 @@ const RegistrationOption = () => {
 
   loading = {loading}
   size = {60}
-  color="green"
+  color="blue"
 
 />
 
