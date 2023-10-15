@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import CaloriesQuestion from '../components/CaloriesQuestion.jsx'
 import QuestionStepper from '../components/QuestionStepper.jsx'
 import PrimaryButton from '../components/PrimaryButton.jsx'
@@ -17,18 +17,20 @@ const Questions = () => {
   const [step, setStep] = React.useState(1)
   const [calories, setCalories] = React.useState(0)
   const [dislikedIngredients, setDislikedIngredients] = React.useState([])
+  //TODO add diet option to request
   const [diet, setDiet] = React.useState('')
   const { sortByDay } = useSortByDay()
   const {
     setDietPlan,
     currentUser: { uid },
   } = useContext(AuthContext)
+  const[loading,setLoading] = React.useState(false)
 
   const navigate = useNavigate()
 
   const handleQuestion = async () => {
     try {
-      setIsLoading(true)
+      setLoading(true)
       const { data } = await axios.get(
         `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&targetCalories=${calories}&exclude=${dislikedIngredients.join(
           ',',
@@ -37,13 +39,17 @@ const Questions = () => {
       const sortable = sortByDay(data.week)
       setDietPlan(sortable)
       await saveDietPlan(sortable, uid)
+
+      //TODO spinner
       navigate('/calendar')
     } catch (error) {
       console.log(error)
     } finally {
-      setIsLoading(false)
+      setLoading(false)
     }
   }
+
+  if(loading) return <BasicSpinner/>
 
   const renderStep = () => {
     switch (step) {
