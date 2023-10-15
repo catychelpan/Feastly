@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../contexts/AuthContext.jsx'
 import { saveDietPlan } from '../firebase/utils.js'
 import useSortByDay from '../hooks/useSortByDay.js'
+import { ClockLoader } from 'react-spinners';
 
 const apiKey = import.meta.env.VITE_API_KEY
 
@@ -24,6 +25,7 @@ const Questions = () => {
     setDietPlan,
     currentUser: { uid },
   } = useContext(AuthContext)
+
   const[loading,setIsLoading] = React.useState(false)
 
   const navigate = useNavigate()
@@ -49,7 +51,13 @@ const Questions = () => {
     }
   }
 
-  if(loading) return <BasicSpinner/>
+  if(loading) return <ClockLoader 
+
+  loading = {loading}
+  size = {60}
+  color="green"
+
+/>
 
   const renderStep = () => {
     switch (step) {
