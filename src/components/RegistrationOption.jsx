@@ -6,6 +6,7 @@ import { useContext } from 'react'
 import { AuthContext } from '../contexts/AuthContext.jsx'
 
 const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+const [loading,setIsLoading] = useState(false)
 
 const sortDays = function (a, b) {
   a = days.indexOf(a[0])
@@ -20,6 +21,7 @@ const RegistrationOption = () => {
 
   const handleGoogleSignIn = async () => {
     try {
+      setIsLoading(true)
       if (!isLoggedIn) await signInWithGoogle()
       const dietPlan = await getDietPlan(currentUser?.uid)
       if (dietPlan) {
@@ -31,8 +33,18 @@ const RegistrationOption = () => {
       navigate('questions')
     } catch (error) {
       console.log(error)
+    }finally{
+      setIsLoading(false)
     }
   }
+
+  if(loading) return <ClockLoader 
+
+  loading = {loading}
+  size = {60}
+  color="green"
+
+/>
 
   return (
     <div
