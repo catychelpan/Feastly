@@ -6,7 +6,6 @@ import { useContext, useState } from 'react'
 import { AuthContext } from '../contexts/AuthContext.jsx'
 
 const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-const [loading,setIsLoading] = useState(false)
 
 const sortDays = function (a, b) {
   a = days.indexOf(a[0])
@@ -16,6 +15,8 @@ const sortDays = function (a, b) {
 
 const RegistrationOption = () => {
   const navigate = useNavigate()
+  const [loading,setIsLoading] = useState(false)
+
 
   const { isLoggedIn, setDietPlan, currentUser } = useContext(AuthContext)
 
