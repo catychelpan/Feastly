@@ -2,7 +2,7 @@ import RegistrationStep2 from '../assets/registration_step2.svg?react'
 import GoogleButton from './GoogleButton.jsx'
 import { useNavigate } from 'react-router-dom'
 import { getDietPlan, signInWithGoogle } from '../firebase/utils.js'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AuthContext } from '../contexts/AuthContext.jsx'
 
 const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
