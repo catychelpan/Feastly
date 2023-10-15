@@ -24,13 +24,13 @@ const Questions = () => {
     setDietPlan,
     currentUser: { uid },
   } = useContext(AuthContext)
-  const[loading,setLoading] = React.useState(false)
+  const[loading,setIsLoading] = React.useState(false)
 
   const navigate = useNavigate()
 
   const handleQuestion = async () => {
     try {
-      setLoading(true)
+      setIsLoading(true)
       const { data } = await axios.get(
         `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&targetCalories=${calories}&exclude=${dislikedIngredients.join(
           ',',
@@ -45,7 +45,7 @@ const Questions = () => {
     } catch (error) {
       console.log(error)
     } finally {
-      setLoading(false)
+      setIsLoading(false)
     }
   }
 
