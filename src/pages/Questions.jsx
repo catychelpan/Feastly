@@ -17,6 +17,7 @@ const apiKey = import.meta.env.VITE_API_KEY
 const Questions = () => {
   const [step, setStep] = React.useState(1)
   const [calories, setCalories] = React.useState(0)
+  
   const [dislikedIngredients, setDislikedIngredients] = React.useState([])
   //TODO add diet option to request
   const [diet, setDiet] = React.useState('')
@@ -34,7 +35,7 @@ const Questions = () => {
     try {
       setIsLoading(true)
       const { data } = await axios.get(
-        `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&targetCalories=${calories}&exclude=${dislikedIngredients.join(
+        `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&targetCalories=${calories}&diet${diet}&exclude=${dislikedIngredients.join(
           ',',
         )}&apiKey=${apiKey}`,
       )
@@ -62,7 +63,7 @@ const Questions = () => {
   const renderStep = () => {
     switch (step) {
       case 1:
-        return <CaloriesQuestion motionKey={step} setCalories={setCalories} calories={calories} />
+        return <CaloriesQuestion motionKey={step} setCalories={setCalories} calories={calories} setDiet={setDiet} diet={diet} />
       case 2:
         return (
           <IngredientsQuestion

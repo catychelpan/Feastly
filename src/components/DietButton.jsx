@@ -1,10 +1,11 @@
 import propTypes from 'prop-types'
 
-const DietButton = ({ Icon, text }) => {
+const DietButton = ({ Icon, text, setDiet}) => {
   return (
     <div className={'flex flex-col gap-[8.5px] sm:gap-[16px] items-center'}>
       <Icon
-        class={'max-h-[50px] max-w-[50px] sm:max-h-[80px] sm:max-w-[80px] active:fill-primary'}
+        
+        class={'max-h-[50px] max-w-[50px] sm:max-h-[80px] sm:max-w-[80px] active:fill-primary pointer'}
       />
       <h5
         className={
@@ -20,6 +21,7 @@ const DietButton = ({ Icon, text }) => {
 DietButton.propTypes = {
   Icon: propTypes.element,
   text: propTypes.string.isRequired,
+  setDiet: propTypes.func
 }
 
 export default DietButton
