@@ -18,7 +18,7 @@ const IngredientsCard = ({ ingredients = [] }) => {
   const onClearAll = () => setIngredientsCopy([])
 
   return (
-    <div className={'rounded-[15px] bg-primary px-[15px] py-[35px] sm:p-[50px] h-full'}>
+    <div className={'rounded-[15px] bg-primary px-[15px] py-[35px] sm:p-[50px] h-full w-m-[511px]'}>
       <h1
         className={
           'font-bold text-xl sm:text-2xl leading-[26px] sm:leading-[42px] mb-[10px] sm:mb-[18px]'
