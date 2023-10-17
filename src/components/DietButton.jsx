@@ -2,10 +2,10 @@ import propTypes from 'prop-types'
 
 const DietButton = ({ Icon, text, setDiet}) => {
   return (
-    <div onClick={() => setDiet(text) } className={'flex flex-col gap-[8.5px] sm:gap-[16px] items-center'}>
+    <div onClick={() => setDiet(text) } className={'flex flex-col gap-[8.5px] sm:gap-[16px] items-center cursor-pointer'}>
       <Icon
         
-        class={'max-h-[50px] max-w-[50px] sm:max-h-[80px] sm:max-w-[80px] active:fill-primary pointer'}
+        class={'max-h-[50px] max-w-[50px] sm:max-h-[80px] sm:max-w-[80px] active:fill-primary'}
       />
       <h5
         className={
