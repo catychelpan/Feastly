@@ -35,8 +35,8 @@ const IngredientsCard = ({ ingredients = [] }) => {
         clear all
       </p>
       <div className={'flex gap-[15px] sm:gap-[18px] flex-wrap overflow-auto max-h-[228px]'}>
-        {getUniqueArrayFrom(ingredientsCopy).map((item) => (
-          <Chip key={item} title={item.name} />
+        {getUniqueArrayFrom(ingredientsCopy).map((item, idx) => (
+          <Chip key={idx} title={item.name} />
         ))}
       </div>
     </div>

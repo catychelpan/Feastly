@@ -44,7 +44,7 @@ const CaloriesQuestion = ({ motionKey, setCalories, calories,diet,setDiet }) => 
           'flex flex-wrap justify-between sm:justify-center gap-[18px] sm:gap-[20px] mb-[25px] px-[70px] sm:px-0'
         }
       >
-        <DietButton onClick={(event) => setDiet(event.target.text)} Icon={VegetarianIcon} text={'vegetarian'} />
+        <DietButton Icon={VegetarianIcon} text={'vegetarian'} />
         <DietButton Icon={VeganIcon} text={'vegan'} />
         <DietButton Icon={DairyFreeIcon} text={'dairy-free'} />
         <DietButton Icon={GlutenFreeIcon} text={'gluten-free'} />
