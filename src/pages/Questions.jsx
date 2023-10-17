@@ -24,7 +24,7 @@ const Questions = () => {
   const { sortByDay } = useSortByDay()
   const {
     setDietPlan,
-    currentUser: { uid },
+    currentUser,
   } = useContext(AuthContext)
 
   const[loading,setIsLoading] = React.useState(false)
@@ -41,7 +41,7 @@ const Questions = () => {
       )
       const sortable = sortByDay(data.week)
       setDietPlan(sortable)
-      await saveDietPlan(sortable, uid)
+      await saveDietPlan(sortable, currentUser?.uid)
 
       //TODO spinner
       navigate('/calendar')
