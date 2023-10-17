@@ -30,7 +30,7 @@ const ResultCard = ({
 }
 
 ResultCard.propTypes = {
-  id: propTypes.string,
+  id: propTypes.number,
   image: propTypes.string,
   title: propTypes.string,
   missedIngredients: propTypes.array,

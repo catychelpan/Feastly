@@ -7,7 +7,7 @@ const NutritionCard = ({ name, quantity }) => {
     >
       <h1
         className={
-          'font-roboto font-bold text-[20px] leading-[29px] whitespace-nowrap max-w-[93px] overflow-hidden overflow-ellipsis'
+          'font-roboto font-bold text-base leading-[29px] whitespace-nowrap max-w-[93px] overflow-hidden overflow-ellipsis'
         }
       >
         {name}

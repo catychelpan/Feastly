@@ -35,7 +35,7 @@ const Questions = () => {
     try {
       setIsLoading(true)
       const { data } = await axios.get(
-        `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&targetCalories=${calories}&diet${diet}&exclude=${dislikedIngredients.join(
+        `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&targetCalories=${calories}&diet=${diet}&exclude=${dislikedIngredients.join(
           ',',
         )}&apiKey=${apiKey}`,
       )
@@ -57,7 +57,12 @@ const Questions = () => {
   const renderStep = () => {
     switch (step) {
       case 1:
-        return <CaloriesQuestion motionKey={step} setCalories={setCalories} calories={calories} setDiet={setDiet} diet={diet} />
+        return <CaloriesQuestion
+          motionKey={step}
+          setCalories={setCalories}
+          calories={calories}
+          setDiet={setDiet}
+          />
       case 2:
         return (
           <IngredientsQuestion

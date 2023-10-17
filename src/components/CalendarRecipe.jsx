@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 const CalendarRecipe = ({ name, time, id }) => {
   return (
     <Link
-      to={`/recipe/${id}/${name}`}
+      to={`/recipe/${id}/${encodeURIComponent(name)}`}
       className={'px-[20px] py-[24px] flex justify-between gap-[25px] bg-white rounded-[9px]'}
     >
       <p

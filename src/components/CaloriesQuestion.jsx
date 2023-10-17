@@ -6,7 +6,7 @@ import GlutenFreeIcon from '../assets/gluten_free.svg?react'
 import { motion } from 'framer-motion'
 import PrimaryInput from './PrimaryInput.jsx'
 
-const CaloriesQuestion = ({ motionKey, setCalories, calories,diet,setDiet }) => {
+const CaloriesQuestion = ({ motionKey, setCalories, calories, setDiet }) => {
   return (
     <motion.div
       key={motionKey}
@@ -44,10 +44,10 @@ const CaloriesQuestion = ({ motionKey, setCalories, calories,diet,setDiet }) => 
           'flex flex-wrap justify-between sm:justify-center gap-[18px] sm:gap-[20px] mb-[25px] px-[70px] sm:px-0'
         }
       >
-        <DietButton Icon={VegetarianIcon} text={'vegetarian'} />
-        <DietButton Icon={VeganIcon} text={'vegan'} />
-        <DietButton Icon={DairyFreeIcon} text={'dairy-free'} />
-        <DietButton Icon={GlutenFreeIcon} text={'gluten-free'} />
+        <DietButton Icon={VegetarianIcon} text={'vegetarian'} setDiet={setDiet} />
+        <DietButton Icon={VeganIcon} text={'vegan'} setDiet={setDiet} />
+        <DietButton Icon={DairyFreeIcon} text={'dairy-free'} setDiet={setDiet} />
+        <DietButton Icon={GlutenFreeIcon} text={'gluten-free'} setDiet={setDiet}/>
       </div>
     </motion.div>
   )
