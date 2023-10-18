@@ -35,7 +35,7 @@ const SearchProductDropdown = ({ setChosenProducts }) => {
     //add to ingredients
     setChosenProducts((prevState) => [...prevState, product])
     //remove from dropdown suggestions
-    setProducts((prevState) => prevState.filter((item) => item.title !== product.title))
+    setProducts((prevState) => prevState.filter((item) => item.name !== product.name))
   }
 
   useEffect(() => {

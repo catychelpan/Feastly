@@ -4,11 +4,11 @@ import propTypes from 'prop-types'
 import React from 'react'
 
 const SearchCard = ({ setChosenProducts }) => {
-  const [offeredOptions, setOfferedOptions] = React.useState(['onion', 'potato', 'carrot'])
+  const [offeredOptions, setOfferedOptions] = React.useState([{ name: 'onion' }, { name: 'potato'}, { name: 'carrot' }])
 
   const removeOption = (option) => {
     //remove from offered options
-    setOfferedOptions(offeredOptions.filter((item) => item !== option))
+    setOfferedOptions(offeredOptions.filter((item) => item.name !== option.name))
     //add to your ingredients
     setChosenProducts((prevState) => [...prevState, option])
   }
@@ -45,7 +45,7 @@ const SearchCard = ({ setChosenProducts }) => {
         {offeredOptions.map((offeredOption) => (
           <Chip
             key={offeredOption}
-            title={offeredOption}
+            title={offeredOption.name}
             onClick={() => removeOption(offeredOption)}
           />
         ))}
