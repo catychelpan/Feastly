@@ -7,7 +7,7 @@ const getUniqueArrayFrom = (array) => {
   return Array.from(new Set(array))
 }
 
-const IngredientsCard = ({ ingredients = [] }) => {
+const IngredientsCard = ({ ingredients = [], setChosenProducts }) => {
   const [ingredientsCopy, setIngredientsCopy] = useState(ingredients)
 
   useEffect(() => {
@@ -15,7 +15,11 @@ const IngredientsCard = ({ ingredients = [] }) => {
   }, [ingredients])
 
   //TODO: What should be the behaviour of clear all ?
-  const onClearAll = () => setIngredientsCopy([])
+  const onClearAll = () => {
+    setIngredientsCopy([])
+    setChosenProducts([])
+  } 
+    
 
   return (
     <div className={'rounded-[15px] bg-primary px-[15px] py-[35px] sm:p-[50px] h-full max-w-[511px]'}>
@@ -45,6 +49,7 @@ const IngredientsCard = ({ ingredients = [] }) => {
 
 IngredientsCard.propTypes = {
   ingredients: propTypes.array,
+  setChosenProducts: propTypes.func
 }
 
 export default IngredientsCard
