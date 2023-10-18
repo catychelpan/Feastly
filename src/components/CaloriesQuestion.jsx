@@ -41,7 +41,7 @@ const CaloriesQuestion = ({ motionKey, setCalories, calories, setDiet }) => {
       </h1>
       <div
         className={
-          'flex flex-wrap justify-between sm:justify-center gap-[18px] sm:gap-[20px] mb-[25px] px-[70px] sm:px-0'
+          'flex flex-wrap justify-center gap-[18px] sm:gap-[20px] mb-[25px] sm:px-0'
         }
       >
         <DietButton Icon={VegetarianIcon} text={'vegetarian'} setDiet={setDiet} />
