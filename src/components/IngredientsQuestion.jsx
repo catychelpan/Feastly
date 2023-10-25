@@ -3,8 +3,21 @@ import { motion } from 'framer-motion'
 import Chip from './Chip.jsx'
 import PrimaryInput from './PrimaryInput.jsx'
 import SearchProductDropdown from './SearchProductDropdown.jsx'
+import { useEffect, useState } from 'react'
+
+const getUniqueArrayFrom = (array) => {
+  return Array.from(new Set(array))
+}
 
 const IngredientsQuestion = ({ title, name, motionKey, setIngredients, ingredients = [] }) => {
+
+  const [ingredientsCopy, setIngredientsCopy] = useState(ingredients)
+
+  useEffect(() => {
+    setIngredientsCopy(ingredients)
+  }, [ingredients])
+
+
   return (
     <motion.div
       key={motionKey}
@@ -23,8 +36,8 @@ const IngredientsQuestion = ({ title, name, motionKey, setIngredients, ingredien
       </div>
       <p className={'font-roboto text-sm leading-[21px] mb-[25px]'}>Enter up to 10 ingredients</p>
       <div className={'flex flex-wrap gap-[18px]'}>
-        {ingredients.map((ingredient) => (
-          <Chip key={ingredient} title={ingredient} />
+        {getUniqueArrayFrom(ingredientsCopy).map((item, idx) => (
+          <Chip key={idx} title={item.name} />
         ))}
       </div>
     </motion.div>

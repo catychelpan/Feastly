@@ -35,7 +35,7 @@ const Questions = () => {
     try {
       setIsLoading(true)
       const { data } = await axios.get(
-        `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&targetCalories=${calories}&diet=${diet}&exclude=${dislikedIngredients.join(
+        `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&targetCalories=${calories}&diet=${diet}&exclude=${dislikedIngredients}.join(
           ',',
         )}&apiKey=${apiKey}`,
       )
